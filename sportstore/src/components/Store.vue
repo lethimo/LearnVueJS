@@ -10,7 +10,7 @@
                 <CategoryControls />
             </div>
             <div class="col-md-9 p-2"> 
-                <product-list />
+                <ProductList />
             </div>
         </div>
     </div>
