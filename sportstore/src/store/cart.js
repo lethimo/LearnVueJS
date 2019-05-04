@@ -25,6 +25,29 @@ export default {
                 state.lines.splice(index, 1);
             }
 
+        },
+        // Lưu lại data của cart
+        setCartData(state, data) {
+            state.lines = data;
+        }
+    },
+    actions: {
+        loadCartData(context) {
+            let data = localStorage.getItem("cart");
+            if (data != null) {
+                context.commit("setCartData", JSON.parse(data)); // Lenh nay de lam gi??
+            }
+        },
+        storeCartData(context) {
+            localStorage.setItem("cart", JSON.stringify(context.state.lines)); //Lenh nay de lam gi??
+        },
+        clearCartData(context) {
+            context.commit("setCartData", []);
+        },
+        initializeCart(context, store) {
+            context.dispatch("loadCartData");
+            store.watch(state => state.cart.lines,
+                () => context.dispatch("storeCartData"), { deep: true });
         }
     }
 
