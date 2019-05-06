@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import Axios from "axios"; // cung cấp HTTP Request
 import CartModule from "./cart";
+import OrdersModule from "./orders";
 Vue.use(Vuex);
 const baseUrl = "http://localhost:3500";
 const productsUrl = `${baseUrl}/products`;
@@ -22,7 +23,10 @@ const testData = [];
 
 export default new Vuex.Store({
     strict: true,
-    modules: { cart: CartModule },
+    modules: {
+        cart: CartModule,
+        orders: OrdersModule
+    },
     state: {
         products: [],
         categoriesData: [], //danh sachs categories

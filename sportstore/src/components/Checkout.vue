@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="col-sm-6 mg-auto">
     <div class="container-fluid">
         <div class="row">
             <div class="col bg-dark text-white">
