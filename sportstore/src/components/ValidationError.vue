@@ -14,6 +14,7 @@ export default {
 
         messages(){
             let messages = [];
+            //Xac nhan Loi
             if(this.validation.$dirty){
                 if(this.hasValidationError("required")){
                     messages.push("Please enter a value");
