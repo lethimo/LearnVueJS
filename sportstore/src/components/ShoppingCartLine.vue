@@ -5,7 +5,7 @@
                     <input type="number" class="form-control-sm" style="width: 50px" v-bind:value = "qvalue" v-on:input = "sendChangeEvent" />
                 </td>
                 <td>{{line.product.name}}</td>
-                <td class="text-right">{{line.product.price|curency}}</td>
+                <td class="text-right">{{line.product.price|currency}}</td>
                 <td class="text-right">{{(line.quantity * line.product.price)|currency}}</td>
                 <td class="text-center"><button type="button" class="btn btn-sm btn-danger" v-on:click = "sendRemoveEvent">Remove</button></td>
             </tr>
